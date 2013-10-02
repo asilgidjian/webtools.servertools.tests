@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.wst.server.ui.deleteServerOptions">
+      <deleteOption
+            id="org.eclipse.wst.server.ui.tests.deleteOption1"
+            label="testAdditional"
+            selected="true"
+            serverTypes="org.eclipse.wst.server.preview.server">
+      </deleteOption>
+      <deleteOption
+            id="org.eclipse.wst.server.ui.tests.deleteOption2"
+            label="testWrongType"
+            selected="true"
+            serverTypes="type.fails">
+      </deleteOption>
+      <deleteOption
+            id="org.eclipse.wst.server.ui.tests.deleteOption3"
+            label="testEnablement"
+            selected="true"
+            serverTypes="org.eclipse.wst.server.preview.server">
+            <enablement>
+       			<or>
+           			<instanceof
+                 		value="java.lang.Object">
+           			</instanceof>
+        		</or>
+      		</enablement>
+      </deleteOption>
+      <deleteOption
+            id="org.eclipse.wst.server.ui.tests.deleteOption4"
+            label="testEnablementFails"
+            selected="true"
+            serverTypes="org.eclipse.wst.server.preview.server">
+            <enablement>
+       			<or>
+           			<instanceof
+                 		value="java.lang.String">
+           			</instanceof>
+        		</or>
+      		</enablement>
+      </deleteOption>
+   </extension>
+
+
+
+</plugin>
